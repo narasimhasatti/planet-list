@@ -7,8 +7,8 @@ import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@ang
   styleUrls: ['./planet-list.component.css']
 })
 export class PlanetListComponent implements OnInit {
-  planetList;
-  finalList;
+  planetList : any;
+  finalList:any;
   form: FormGroup;
   constructor(private planetListService: PlanetListService, private fb: FormBuilder) {
     this.form = this.fb.group({
