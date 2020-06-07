@@ -1,4 +1,19 @@
 <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="Planet List">Planet List</mat-tab>
-    <mat-tab label="Favourite Planet List">List of favourite Planet List</mat-tab>
+    <mat-tab label="Planet List">
+    
+      <form [formGroup]="form" (ngSubmit)="submitForm()"> 
+        <div *ngFor="let data of planetList; let i=index">
+          <label>
+            <input type="checkbox" [value]="data.name" (change)="onCheckboxChange($event)"/>
+            {{data.name}}
+          </label>
+        </div>
+        <p class="error" *ngIf="this.form.controls['favouriteList'].errors?.required">
+         Please select atleast one value.
+        </p>
+        <input type="submit" value="Submit"  [disabled]="!form.valid">
+     </form> 
+    
+    </mat-tab>
+    <mat-tab label="Favourite Planet List"><app-favourite-list [list]="finalList"></app-favourite-list></mat-tab>
   </mat-tab-group>

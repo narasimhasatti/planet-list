@@ -6,18 +6,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlanetListComponent } from './planet-list/planet-list.component';
 import { HttpClientModule }    from '@angular/common/http';
+import { FavouriteListComponent } from './planet-list/favourite-list/favourite-list.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlanetListComponent
+    PlanetListComponent,
+    FavouriteListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
     
   ],
   providers: [],
